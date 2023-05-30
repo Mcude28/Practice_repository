@@ -1,0 +1,57 @@
+
+
+p{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.a{
+    font-family: Tahoma;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.b{
+    font-family: Arial;
+    color: red;
+    width: 250px;
+    margin-bottom: 20px;
+
+}
+.sales{
+    font-size: 20px;
+    color:black;
+    font-weight: bold;
+
+}
+.c{
+    font-family: Verdana;
+    width: 200px;
+}
+.sub-title{
+    font-family: Verdana;
+    font-size: 14px;
+    color: rgb(96, 96, 96);
+    margin-top: 3px;
+    margin-bottom: 18px;
+    
+}
+.c-intro{
+    font-family: Verdana;
+    font-size: 14px;
+    width: 250px;
+    margin-bottom: 18px;
+    line-height: 22px;
+}
+.get-started{
+    font-family: Verdana;
+    font-size: 14px;
+    background-color: green;
+    color: white;
+    border: none;
+    width: 100px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
