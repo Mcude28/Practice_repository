@@ -2,7 +2,7 @@
 #     #computes 2+2
 #     assert 2+2 == 4
 
-def test_calculate_fibonacci():
+def test_calculate_fibonacci(n):
     """Calculates the nth Fibonacci value.
 
     Args:
@@ -12,7 +12,7 @@ def test_calculate_fibonacci():
         The nth Fibonacci value.
     """
     # Base cases
-    n= 5
+
     if n == 0:
         return 0
     elif n == 1:
@@ -21,3 +21,4 @@ def test_calculate_fibonacci():
     # Recursive case
     else:
         return test_calculate_fibonacci(n-1) + test_calculate_fibonacci(n-2)
+test_calculate_fibonacci(5)
