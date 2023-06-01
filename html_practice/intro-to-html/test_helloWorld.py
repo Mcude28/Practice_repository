@@ -1,7 +1,8 @@
 # def test_func():
 #     #computes 2+2
 #     assert 2+2 == 4
-    
+def n():
+    return 5
 def test_calculate_fibonacci(n):
     """Calculates the nth Fibonacci value.
 
@@ -19,4 +20,4 @@ def test_calculate_fibonacci(n):
 
     # Recursive case
     else:
-        return calculate_fibonacci(n-1) + calculate_fibonacci(n-2)
+        return test_calculate_fibonacci(n-1) + test_calculate_fibonacci(n-2)
