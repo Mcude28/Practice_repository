@@ -1,2 +1,4 @@
 def test_func():
-    print('Hello World!')
+    #computes 2+2
+    assert 2+2 != 4
+    
