@@ -7,7 +7,7 @@ import time
 
 def time_consuming_function():
     # Simulate a time-consuming task
-    time.sleep(2)
+    time.sleep(3)
 
 def test_performance():
     start_time = time.time()
