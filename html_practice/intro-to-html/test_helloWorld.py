@@ -2,7 +2,7 @@
 #     #computes 2+2
 #     assert 2+2 == 4
     
-def calculate_fibonacci(n):
+def test_calculate_fibonacci(n):
     """Calculates the nth Fibonacci value.
 
     Args:
