@@ -2,23 +2,17 @@
 #     #computes 2+2
 #     assert 2+2 == 4
 
-def test_calculate_fibonacci(n):
-    """Calculates the nth Fibonacci value.
+# import pytest
+import time
 
-    Args:
-        n (int): The index of the desired Fibonacci value.
+def time_consuming_function():
+    # Simulate a time-consuming task
+    time.sleep(2)
 
-    Returns:
-        The nth Fibonacci value.
-    """
-    # Base cases
+def test_performance():
+    start_time = time.time()
+    time_consuming_function()
+    execution_time = time.time() - start_time
 
-    if n == 0:
-        return 0
-    elif n == 1:
-        return 1
-
-    # Recursive case
-    else:
-        return test_calculate_fibonacci(n-1) + test_calculate_fibonacci(n-2)
-test_calculate_fibonacci(5)
+    # Assert that the execution time is within the expected range
+    assert execution_time < 3  # Assuming the expected execution time is less than 3 seconds
