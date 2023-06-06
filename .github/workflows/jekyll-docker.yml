@@ -4,18 +4,19 @@ on:
   push:
     branches: [ "main" ]
   pull_request:
-    branches: [ "main" ]       
-  
+    branches: [ "main" ]
+
 jobs:
   build:
     runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v3
-    - name: Set up Ruby
+    - name: Set up Ruby and development tools
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.7
+        development: true
     - name: Install dependencies
       run: |
         gem install jekyll bundler
