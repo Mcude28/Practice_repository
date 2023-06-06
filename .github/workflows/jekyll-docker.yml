@@ -22,7 +22,8 @@ jobs:
         ridk install
     - name: Install dependencies
       run: |
-        gem install jekyll bundler
+        gem install jekyll --ignore-dependencies
+        gem install bundler
         bundle install
     - name: Build the site
       run: |
