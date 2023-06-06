@@ -28,3 +28,4 @@ jobs:
     - name: Build the site
       run: |
         bundle exec jekyll build
+
