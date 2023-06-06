@@ -16,3 +16,14 @@ def test_performance():
 
     # Assert that the execution time is within the expected range
     assert execution_time < 3  # Assuming the expected execution time is less than 3 seconds
+    
+    start_time = time.time()
+    long_time_function()
+    execution_time = time.time() - start_time
+
+    # Assert that the execution time is within the expected range
+    assert execution_time < 3  # Assuming the expected execution time is less than 3 seconds
+
+def long_time_function():
+    # Simulate a time-consuming task
+    time.sleep(100)
