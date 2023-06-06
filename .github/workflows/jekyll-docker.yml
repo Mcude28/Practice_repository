@@ -17,5 +17,5 @@ jobs:
       run: |
         docker run --rm `
         -v "${{ github.workspace }}:/srv/jekyll" -v "${{ github.workspace }}/_site:/srv/jekyll/_site" `
-        jekyll/jekyll:3.8 `
+        starefossen/github-pages `
         jekyll build --future
