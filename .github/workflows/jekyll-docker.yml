@@ -2,20 +2,30 @@ name: Jekyll site CI
 
 on:
   push:
-    branches:  [ "main" ]
+    branches: [ "main" ]
   pull_request:
-    branches:  [ "main" ]       
-  
+    branches: [ "main" ]
+
 jobs:
   build:
-
-    runs-on: Windows-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build the site in the jekyll/builder container
+    - name: Set up Ruby and development tools
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: 2.7
+        development: true
+    - name: Install Ruby DevKit
       run: |
-        docker run `
-        -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site `
-        jekyll/jekyll:3.8 `
-        jekyll build --future
+        ridk install
+    - name: Install dependencies
+      run: |
+        gem install jekyll --ignore-dependencies
+        gem install bundler
+        bundle install
+    - name: Build the site
+      run: |
+        bundle exec jekyll build
+
