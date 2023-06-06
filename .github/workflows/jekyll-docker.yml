@@ -17,6 +17,9 @@ jobs:
       with:
         ruby-version: 2.7
         development: true
+    - name: Install Ruby DevKit
+      run: |
+        ridk install
     - name: Install dependencies
       run: |
         gem install jekyll bundler
@@ -24,4 +27,3 @@ jobs:
     - name: Build the site
       run: |
         bundle exec jekyll build
-        
