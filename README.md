@@ -83,3 +83,6 @@
     -Click on Start commit
     -Click on Create new file
     -Configure the Yaml file template such that it works on all OS
+
+## Setting up YAML
+    The reccomeneded templates should have already premade the YAML files, it's a matter of if it works on our oerationg system and has all the correct downloads and sysntax
