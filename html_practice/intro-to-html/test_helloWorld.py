@@ -26,4 +26,4 @@ def test_performance():
 
 def long_time_function():
     # Simulate a time-consuming task
-    time.sleep(100)
+    time.sleep(2)
