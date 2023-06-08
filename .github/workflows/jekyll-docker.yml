@@ -2,30 +2,21 @@ name: Jekyll site CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "development-branch" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "development-branch" ]
 
 jobs:
   build:
-    runs-on: windows-latest
+
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
-    - name: Set up Ruby and development tools
-      uses: actions/setup-ruby@v1
-      with:
-        ruby-version: 2.7
-        development: true
-    - name: Install Ruby DevKit
+    - name: Build the site in the jekyll/builder container
       run: |
-        ridk install
-    - name: Install dependencies
-      run: |
-        gem install jekyll --ignore-dependencies
-        gem install bundler
-        bundle install
-    - name: Build the site
-      run: |
-        bundle exec jekyll build
+        docker run \
+        -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
+        jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
+
 
