@@ -21,10 +21,12 @@
 
 
 ### Creating a new branch
-    git checkout -b <branch_name>
-    This creates the branch
-    git push -u origin <branch_name>
-    This pushes the branch to the reopository
+    To creates the branch and change the branch you are on to the new brance use
+`git checkout -b <branch_name>`
+    
+    To pushes the branch to the reopository
+`git push -u origin <branch_name>`
+    
     
 
 ### Making changes
@@ -34,13 +36,17 @@
     
 
 ### Committing changes
-    git add  -A
-    This adds all the files for specific files use 
-    git add <file_name1> <file_name2> ...
-    git commit -m "message"
+    To add All the files from your laptop to the repo
+`git add  -A`
+
+    To adds all the files for specific files use 
+`git add <file_name1> <file_name2> ...`
+
     This sends the  changes to the repo with a message
+`git commit -m "message"`
+    
 ### Pushing changes to remote repository
-    git push origin <branch_name>
+`git push origin <branch_name>`
    
 ### Creating a pull request
     Go to the repository on github.
@@ -86,3 +92,71 @@
 
 ## Setting up YAML
     The reccomeneded templates should have already premade the YAML files, it's a matter of if it works on our oerationg system and has all the correct downloads and sysntax
+
+    For working on multiple OS it is important to create a requirements.txt and a makefile that includes all the downloads
+
+## Making requiremnts.txt
+    With pip installed, use the command in a window's powershell. make sure the path of the directory is where you are running your repositroy
+`pip freeze > requiremnts.txt`
+
+    This should create a file requitrments.txt that contains all the downloads needed to run the programs within the repository
+
+    Otherwise, you can install conda (a method of using a virtual enviormnet that can be designated to the ) using the link https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html and following the instuctions on the site. After installation, run Anaconda Prompt and to check if the installation worked use the command
+
+`conda list`
+
+    and a List of all packages and versions installed in active environment should show up on the terminal after some time. This shows that it is running properly.
+
+    To create a venv named Hynts use the command:
+
+`conda create --name Hynts`
+
+    To activate the venv, use the command
+
+`conda activate Hynts`
+
+    and to deactivate
+
+`conda deactivate Hynts`
+
+    To install python version 3.8 and to check the version of python the following commands should work
+
+`conda install python=3.8`
+`python --version`
+    
+    To install numpy
+
+`conda install numpy`
+
+    To remove numpy
+
+`conda remove numpy`
+
+    To upate numpy
+
+`conda update numpy`
+
+    To freeze the packages in a path and put into a requiremnts.txt file use the commands
+
+`conda list > requiremnts.txt`
+
+    To install the requirements onto a new environment use the command
+
+`conda create --name newenv --file requirments.txt`
+
+## Makefile
+    In the YAML file, use the  run command follwed with make "make name" and this command serches for a makefile and installs the dependencies inuded. an example of this is shown below:
+`-name: Install dependecies `
+
+`run: |`
+
+ ` make install`
+
+    The following Makefile would now include instructions for what we want to install like:
+`install:`
+
+`python -m pip install --upgrade pip && \`
+
+`pip install flake8 pytest && \`
+
+`pip install -r requirements.txt`
